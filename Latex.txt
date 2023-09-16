@@ -1,0 +1,597 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{rcompanocca@unsa.edu.pe}
+\newcommand{\itemStudent}{Roni Companocca Checco}
+\newcommand{\itemCourse}{Programación}
+\newcommand{\itemCourseCode}{20210558}
+\newcommand{\itemSemester}{II}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - B}
+\newcommand{\itemInput}{Del 12 Septiembre 2023}
+\newcommand{\itemOutput}{Al 13 Septiembre 2023}
+\newcommand{\itemPracticeNumber}{02}
+\newcommand{\itemTheme}{Arreglos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
+\fancyfoot[L]{Estudiante Roni Companocca Checco}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+	
+	\vspace*{10px}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	%\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+
+    \section{TAREA}
+	\begin{itemize}	
+		\item Crear e inicializar arreglos
+		\item Uso del atributo length de arreglos
+		\item Copiar valores de un arreglo a otro mediante System.arraycopy()
+        \item Crear métodos que reciban arreglos como parámetros
+        \item Valorar el uso de arreglos estándar frente a las variables simples
+	\end{itemize}
+
+    \section{EQUIPOS, MATERIALES Y TEMAS UTILIZADOS}
+	\begin{itemize}
+		\item Sistema Operativo Windows
+		\item OpenJDK 64-Bits 17.0.7.
+		\item Git 2.39.2.	
+  	\item Cuenta en GitHub con el correo institucional.
+	\end{itemize}
+
+    \section{URL DE REPOSITORIO GITHUB}
+	\begin{itemize}
+		\item URL para el Repositorio GitHub.
+		\item \url{https://github.com/RONI-COMPANOCCA-CHECCO}
+		\item URL para el laboratorio 02 en el Repositorio GitHub.	
+  	\item \url{https://github.com/RONI-COMPANOCCA-CHECCO/FP2-LAB2}
+        \item \url{https://github.com/RONI-COMPANOCCA-CHECCO/FP2-LAB2}
+	\end{itemize}
+ 
+    
+    
+    \section{ACTIVIDADES}
+	\begin{itemize}
+		\item JUEGO DEL AHORCADO
+		\item En este ejercicio se le solicita a usted implementar el juego del ahorcado utilizando el código parcial que se le entrega.
+		\item Deberá considerar que:
+        \item El juego valida el ingreso de letras solamente. En caso el usuario ingrese un carácter equivocado le dará el mensaje de error y volverá a solicitar el ingreso
+        \item El juego supone que el usuario no ingresa una letra ingresada previamente
+        \item El método ingreseLetra() debe ser modificado para incluir las consideraciones de validación
+        \item Puede crear métodos adicionales
+	\end{itemize}
+ 
+	\section{CUESTIONARIO}
+	\begin{itemize}
+		\item ¿Se pueden clonar los arreglos? Explique 2 formas.
+		\item ¿Qué ventajas tiene el uso de los arreglos?
+		\item Investigue la clase Arrays y describa 3 métodos importantes que ofrece dicha clase. (fuera de los vistos en el marco conceptual)	
+	\end{itemize}
+	
+	\section{REFERENCIAS}
+	\begin{itemize}
+		\item M. Aedo, “Fundamentos de Programación 2 - Tópicos de Programación Orientada a Objetos”, Primera Edición, 2021, Editorial UNSA.
+		\item \url{https://github.com/rescobedoq/programacion.git}
+		\item J. Dean, "Introduction to programming with Java: A Problem Solving Approach”, Third Edition, 2021, McGraw-Hill.
+        \item C. T. Wu, "An Introduction to Object-Oriented Programming with Java", Fifth Edition, 2010, McGraw-Hill.
+        \item P. Deitel, "Java How to Program", Eleventh Edition, 2017, Prentice Hall.
+	\end{itemize}
+	\section{CODIGO}
+	\begin{lstlisting}[language=bash,caption={}][H]
+		// RONI COMPANOCCA CHECCO
+// CUI: 20210558
+// LABORATORIO 01
+// FUNDAMENTOS DE PROGRAMACION 
+
+import java.util.Scanner;
+public class hanged {
+    public static void main(String []args){
+    	
+        String ahor1 = "  +---+ \n"+
+                       "  |   | \n" + 
+                       "      | \n" +
+                       "      | \n" +
+                       "      | \n" +
+                       "      | \n" +
+                       "=========";
+
+        String ahor2 = "  +---+ \n"+
+                       "  |   | \n" + 
+                       "  O   | \n" +
+                       "      | \n" +
+                       "      | \n" +
+                       "      | \n" +
+                       "=========";
+
+        String ahor3 = "  +---+ \n"+
+                       "  |   | \n" + 
+                       "  O   | \n" +
+                       "  |   | \n" +
+                       "      | \n" +
+                       "      | \n" +
+                       "=========";
+
+        String ahor4 = "  +---+ \n"+
+                       "  |   | \n" + 
+                       "  O   | \n" +
+                       " /|   | \n" +
+                       "      | \n" +
+                       "      | \n" +
+                       "=========";
+
+        String ahor5 = "  +---+ \n"+
+                       "  |   | \n" + 
+                       "  O   | \n" +
+                       " /|\\ | \n" +
+                       "      | \n" +
+                       "      | \n" +
+                       "=========";
+
+        String ahor6 = "  +---+ \n"+
+                       "  |   | \n" + 
+                       "  O   | \n" +
+                       " /|\\ | \n" +
+                       " /    | \n" +
+                       "      | \n" +
+                       "=========";
+
+        String ahor7 = "  +---+ \n"+
+                       "  |   | \n" + 
+                       "  O   | \n" +
+                       " /|\\ | \n" +
+                       " / \\ | \n" +
+                       "      | \n" +
+                       "=========";
+
+        String [] figuras = {ahor1, ahor2, ahor3,ahor4,ahor5,ahor6,ahor7};
+		int contador = 1;
+		int contadorError = 1;
+		String letra;
+		String progreso="";
+		String [] palabras = {"programacion", "java", "identacion", "clases","objetos", "desarrollador", "pruebas"};
+		String palSecreta = getPalabraSecreta(palabras);
+		for(int i=0;i<palSecreta.length();i++) {
+			progreso=progreso+"_ ";
+		}
+		System.out.println(figuras[0]);
+		mostrarBlancos(palSecreta);
+		System.out.println("\n");
+		while(contadorError<=6){
+			letra = ingreseLetra();
+		    if (letraEnPalabraSecreta(letra, palSecreta)) {
+			     progreso=mostrarBlancosActualizados(letra, palSecreta, progreso);
+		    }else {
+		    	System.out.println(figuras[contadorError]);
+		    	contadorError++;
+		    	progreso=mostrarBlancosActualizados(letra, palSecreta, progreso);
+		    }
+		    contador++;
+
+        // COMPLETAR PARA INDICAR SI GANO, PERDIO Y CUANTOS TURNOS NECESITO
+            /* EN ESTA PARTE COMPLETAMOS SI GANA, PARA LO CUAL EL PROGRESO QUE TENEMOS VAMOS CONTANDO
+            ANTES DE AHORCARNO, ESTA PARTE NOS PERMITE IMPRIMIR EN LA PANTALLA EL NUMERO DE INTENTOS PARA 
+            PODER LOGRARLO */
+		    for(int i=0;i<progreso.length();i++) {
+		    	if(!progreso.substring(i, i+1).equals("_")) {
+		    		if(i==progreso.length()-1) {
+		    			System.out.println("Ganaste!");
+		    			System.out.println("Número de intentos: "+contador);
+		    			System.exit(0);
+		    		}
+		    	}else {
+		    		break;
+		        }
+		    }
+		    System.out.println("\n");
+		}
+        // SI LO PERDEMOS ENTONCES ESTE NOS SALE EN PANTALLA, EN EL MOMENTO DE AHORCARNOS
+		System.out.println("Perdiste :(");
+		System.out.println("La palabra secreta era: "+palSecreta);
+    }
+    
+    /* ESTE METODO NOS PERMITE ALEATORIAMENTE DAR LA PALABRA SECRETA QUE YA LO TENEMOS, DE TODAS LAS 
+     * PALABRAS SECRETAS NOS SELECCIONA A UNA DE ELLAS PARA QUE EL USUARIO PUEDA COMPLETAR.
+     */
+    public static String getPalabraSecreta(String [] lasPalabras){
+		String palSecreta;
+		int ind;
+		int indiceMayor = lasPalabras.length -1;
+		int indiceMenor =0;
+		ind = (int) ((Math.random() * (indiceMayor - indiceMenor + 1) + indiceMenor));
+		return lasPalabras[ind];
+	}
+    
+    /*
+     * EN ESTE METODO VACIO MOSTRAMOS LO ESPACIOS QUE VA A OCUPAR LA LETRA QUE HA SIDO ESCOGIDO
+     * ALEATORIAMENTE.
+     */
+    public static void mostrarBlancos(String palabra) {
+		for(int i=0; i< palabra.length(); i++) {
+			System.out.print("_ " );
+		}
+	}
+    
+    /*
+     * EN ESTE METODO INGRESAMOS UNA LETRA QUE AUTOMATICAMENTE VA SER VALIDADO POR EL METODO LETRAVALIDO,
+     * YA QUE LOS NUMEROS O OTRAS TECLAS NO SERAN ADMITIDOS Y UNA VES QUE LA LETRA INGRESADA SEA VALIDA,
+     * NOS IMPRIMIRA EN LA PANTALLA SI Y SOLO SI ES PARTE DE LA PALABRA SECRETO.
+     */
+    public static String ingreseLetra(){
+		String laLetra;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ingrese letra: ");
+		laLetra = sc.next();
+		while(laLetra.length()!= 1 || !letraValido(laLetra)){
+			System.out.println("Ingrese letra: ");
+			laLetra = sc.next();
+		}return laLetra;
+	}
+    
+    /*ESTE METODO NOS PERMITE SELECCIONAR LAS LETRAS COORECTAS, QUE SI FORMAN PARTE DE LA PALABRA
+     * SECRETO SINO FORMA PARTE NO ADMITIRA.
+     */
+    public static boolean letraEnPalabraSecreta(String letra, String palSecreta ){
+		for(int i=0;i<palSecreta.length();i++) {
+			if(letra.equals(palSecreta.substring(i, i+1))) {
+				return true;
+			}
+		}
+	return false;
+	}
+    
+    /*
+     * ESTE METODO NOS PERMITE GUARDAR LAS LETRAS CORRECTAS DE LA PALABRA SECRETO QUE INGRESAMOS LOS 
+USUARIOS, CADA VES QUE INGRESAMOS UNA LETRA QUE SI PERTENECE LO GUARDA Y NOS IMPRIME EN LA PANTALLA 
+MIENTRAS AVANZAMOS CON ADIVINAR LA PALABRA SECRETO.
+     */
+    public static String mostrarBlancosActualizados(String letra,String palSecreta,String progreso){
+    	System.out.println("PROCESANDO......");
+		String avance1="";
+		for(int i=0;i<palSecreta.length();i++) {
+			if(letra.equals(palSecreta.substring(i, i+1))) {
+				avance1=avance1+letra+" ";
+			}else{
+				avance1=avance1+progreso.substring(2*i, 2*i+2);
+			}
+		}
+	    System.out.print(avance1);
+	    return avance1;
+	}
+    
+    /*EN ESTE METODO LO QUE HACEMOS ES VALIDAR LAS LETRAS QUE VAMOS A USAR AL MOMENTO DE INGRESAR POR EL 
+     * TECLADO, PARA QUE NO NOS PUEDA SALIR EL ERROR.
+     */
+    public static boolean letraValido(String laLetra) {
+		String abecedario[]= 
+			{"a","b","c","d","e","f","g","h","i","j","k","l","m","n",
+   "ñ","o","p","q","r","s","t","u","v","w","x","y","z"};
+		for(int i=0;i<abecedario.length;i++) {
+			if(laLetra.equalsIgnoreCase(abecedario[i])) {
+				return true;
+			}
+		}
+		return false;
+	}
+}
+    \end{lstlisting}
+    \section{EJECUCION CUANDO NO SE AHORCA}
+	\begin{lstlisting}[language=bash,caption={}][H]
+   +---+ 
+  |   | 
+      | 
+      | 
+      | 
+      | 
+=========
+_ _ _ _ _ _ _ _ _ _ 
+
+Ingrese letra: 
+P
+  +---+ 
+  |   | 
+  O   | 
+      | 
+      | 
+      | 
+=========
+PROCESANDO......
+_ _ _ _ _ _ _ _ _ _ 
+
+Ingrese letra: 
+I
+  +---+ 
+  |   | 
+  O   | 
+  |   | 
+      | 
+      | 
+=========
+PROCESANDO......
+_ _ _ _ _ _ _ _ _ _ 
+
+Ingrese letra: 
+D
+  +---+ 
+  |   | 
+  O   | 
+ /|   | 
+      | 
+      | 
+=========
+PROCESANDO......
+_ _ _ _ _ _ _ _ _ _ 
+
+Ingrese letra: 
+d
+PROCESANDO......
+_ d _ _ _ _ _ _ _ _ 
+
+Ingrese letra: 
+i
+PROCESANDO......
+i d _ _ _ _ _ i _ _ 
+
+Ingrese letra: 
+e
+PROCESANDO......
+i d e _ _ _ _ i _ _ 
+
+Ingrese letra: 
+n
+PROCESANDO......
+i d e n _ _ _ i _ n 
+
+Ingrese letra: 
+t
+PROCESANDO......
+i d e n t _ _ i _ n 
+
+Ingrese letra: 
+a
+PROCESANDO......
+i d e n t a _ i _ n 
+
+Ingrese letra: 
+c
+PROCESANDO......
+i d e n t a c i _ n 
+
+Ingrese letra: 
+o
+PROCESANDO......
+i d e n t a c i o n Ganaste!
+Número de intentos: 12
+	\end{lstlisting}
+    \section{EJECUCION CUANDO SE AHORCA}
+	\begin{lstlisting}[language=bash,caption={}][H]
+   +---+ 
+  |   | 
+      | 
+      | 
+      | 
+      | 
+=========
+_ _ _ _ _ _ _ 
+
+Ingrese letra: 
+e
+PROCESANDO......
+_ _ _ e _ _ _ 
+
+Ingrese letra: 
+j
+  +---+ 
+  |   | 
+  O   | 
+      | 
+      | 
+      | 
+=========
+PROCESANDO......
+_ _ _ e _ _ _ 
+
+Ingrese letra: 
+r
+PROCESANDO......
+_ r _ e _ _ _ 
+
+Ingrese letra: 
+o
+  +---+ 
+  |   | 
+  O   | 
+  |   | 
+      | 
+      | 
+=========
+PROCESANDO......
+_ r _ e _ _ _ 
+
+Ingrese letra: 
+l
+  +---+ 
+  |   | 
+  O   | 
+ /|   | 
+      | 
+      | 
+=========
+PROCESANDO......
+_ r _ e _ _ _ 
+
+Ingrese letra: 
+W
+  +---+ 
+  |   | 
+  O   | 
+ /|\ | 
+      | 
+      | 
+=========
+PROCESANDO......
+_ r _ e _ _ _ 
+
+Ingrese letra: 
+T
+  +---+ 
+  |   | 
+  O   | 
+ /|\ | 
+ /    | 
+      | 
+=========
+PROCESANDO......
+_ r _ e _ _ _ 
+
+Ingrese letra: 
+P
+  +---+ 
+  |   | 
+  O   | 
+ /|\ | 
+ / \ | 
+      | 
+=========
+PROCESANDO......
+_ r _ e _ _ _ 
+
+Perdiste :(
+La palabra secreta era: pruebas
+	\end{lstlisting}
+
+\end{document}
